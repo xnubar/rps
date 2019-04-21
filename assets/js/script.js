@@ -28,7 +28,9 @@ database.ref("/players/").on("value", function (snap) {
         $(".player1 .wins").html(player1.wins)
         $(".player1 .losses").html(player1.losses)
     } else {
-        $(".player1 .player-box-header-title").html("Waiting for Player1")
+        $(".player1 .player-box-header-title").html("Waiting for Player1");
+        $(".player1 .wins").html(0);
+        $(".player1 .losses").html(0);
     }
     if (snap.hasChild("player2")) {
         player2 = val.player2;
@@ -36,7 +38,9 @@ database.ref("/players/").on("value", function (snap) {
         $(".player2 .wins").html(player2.wins)
         $(".player2 .losses").html(player2.losses)
     } else {
-        $(".player2 .player-box-header-title").html("Waiting for Player2")
+        $(".player2 .player-box-header-title").html("Waiting for Player2");
+        $(".player2 .wins").html(0);
+        $(".player2 .losses").html(0);
     }
     loadChoices();
 
@@ -73,10 +77,29 @@ database.ref("/players/").on("value", function (snap) {
     }
 })
 
-
 database.ref("/turn/").on("value", function (snap) {
     loadChoices();
 })
+
+
+database.ref('/chat/messages/').on('value', function (snapshot) {
+
+    let val = snapshot.val();
+
+    $('.messages').html('');
+
+    for (let i in val) {
+        let key = val[i]["player"];
+        let div = $("<div>");
+        if (val[i].message === "I have disconnected") {
+            $(div).addClass("exit");
+        }
+        $(div).html(key + ": " + val[i].message);
+        $('.messages').append(div);
+
+    }
+})
+
 
 
 
@@ -108,6 +131,7 @@ $(window).on("beforeunload", function () {
             message: "I have disconnected"
         });
     })
+  
     database.ref("players/" + playerText).set(null)
 })
 
@@ -138,6 +162,20 @@ $(document).on("submit", ".register", function (event) {
     })
 })
 
+$('.send').on('click', function () {
+    database.ref("players/").once("value", function (snap) {
+        let val = snap.val();
+        let message = $(".message-text").val();
+        if (snap.hasChild("player1") && snap.hasChild("player2")) {
+            database.ref('chat/messages/').push({
+                player: val[playerText].name,
+                message
+            });
+            $('.message-text').val('');
+        }
+    })
+
+})
 
 
 
