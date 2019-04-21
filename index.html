@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPS</title>
+    <link rel="shorcut icon" href="./assets/imgs/favico.png">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+</head>
+<body>
+    <header id="rps-header">
+        <h4 class="logo-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            R<img src="./assets/imgs/rock.png">OCK<br>
+            S<img src="./assets/imgs/scissors.png">ISSORS<br>
+            P<img src="./assets/imgs/paper.png">PER
+        </h4>
+    </header>
+
+    <section id="rps">
+        <div class="container">
+            <div class="header">
+                <div class="name-header">
+                    <h4 class="name-header-title"></h4>
+                    <h4 class="your-turn">It's Your Turn!</h4>
+                    <h4 class="waiting-for-player"></h4>
+                </div>
+                <form class="register">
+                    <div class="input-group name-input-header">
+                        <input type="text" class="form-control" id="name-text" placeholder="Enter your name">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default submit-btn" type="button">Go!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="players-container">
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 player player1">
+                    <div class="player-box">
+                        <h4 class="player-box-header-title">Waiting for Player 1</h4>
+                        <div class="items">
+                            <h5 class="item" data-value="rock">ROCK</h5>
+                            <h5 class="item" data-value="paper">PAPER</h5>
+                            <h5 class="item" data-value="scissors">SCISSORS</h5>
+                        </div>
+                        <h4 class="choice-text"></h4>
+                        <h4 class="wins-losses">
+                            <span class="wins-text">Wins: <span class="wins">0</span></span> &nbsp;
+                            <span class="losses-text">Losses: <span class="losses">0</span></span>
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 results-board">
+                    <h4 class="winner-name"></h4>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 player player2">
+                    <div class="player-box">
+                        <h4 class="player-box-header-title">Waiting for Player 2</h4>
+                        <div class="items">
+                            <h5 class="item" data-value="rock">ROCK</h5>
+                            <h5 class="item" data-value="paper">PAPER</h5>
+                            <h5 class="item" data-value="scissors">SCISSORS</h5>
+                        </div>
+                        <h4 class="choice-text"></h4>
+                        <h4 class="wins-losses">
+                            <span class="wins-text">Wins: <span class="wins">0</span></span> &nbsp;
+                            <span class="losses-text">Losses: <span class="losses">0</span></span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="message-container">
+            <div class="messages">
+
+            </div>
+
+            <div class="input-items">       
+                    <input type="text" class="message-text" placeholder="Type your message">
+                    <button class="send">send</button>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

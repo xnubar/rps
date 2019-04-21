@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(-90deg, blue, dodgerblue);
+    height: 100vh;
+    min-width: 460px;
+}
+
+#rps-header {
+    text-align: center;
+    display: block;
+    height: 200px;
+    min-width: 460px;
+
+}
+
+#rps-header .logo-header {
+    margin: 10px auto;
+    font-size:60px;
+    color:#fff;
+    font-family: 'Play', sans-serif;
+}
+
+#rps-header .logo-header img {
+    height: 40px;
+    width: 40px;
+}
