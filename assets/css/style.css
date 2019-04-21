@@ -23,3 +23,102 @@ body {
     height: 40px;
     width: 40px;
 }
+
+#rps .container .players-container {
+  padding: 10px;
+}
+#rps .message-container {
+  height: 250px;
+  width: 400px;
+  margin: 20px auto;
+  background:#fff;
+  position: relative;
+}
+#rps .message-container .input-items {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+#rps .message-container .input-items .message-text {
+  width: 80%;
+  float: left;
+}
+#rps .message-container .input-items .send {
+  width: 20%;
+}
+#rps .container form {
+  width: 200px;
+  margin:0 auto;
+}
+
+#rps .container .header .name-header {
+  text-align: center;
+}
+
+
+#rps .container .players-container {
+  margin: 20px 0;
+}
+
+#rps .container .players-container .player ,
+#rps .container .players-container .results-board {
+  border:1px solid #000;
+  padding: 10px;
+  height: 120px;
+  width: 30%;
+}
+
+#rps .container .players-container .results-board {
+  margin: 0 20px;
+
+}
+.exit {
+  background: gray;
+}
+
+#rps .container .players-container .results-board .winner-name {
+  text-align: center;
+  font-size:40px;
+  padding:5px 0;
+}
+
+#rps .container .players-container .player .wins-losses {
+  visibility: hidden;
+  text-align: center;
+}
+
+
+#rps .container .players-container .player .player-box-header-title {
+  text-align: center;
+}
+
+#rps .name-header  .your-turn {
+  text-align: center;
+  display: none;
+}
+
+#rps .name-header .waiting-for-player {
+  text-align: center;
+  display: none;
+}
+
+#rps .container .players-container .player .items {
+  visibility: hidden;
+  text-align: center;
+  padding: 3px;
+}
+
+
+
+#rps .container .players-container .player .choice-text {
+  display: none;
+  text-align:center;
+  font-size:30px;
+  margin:-45px 0 10px 0;
+}
+
+#rps .container .players-container .player .items .item {
+  margin: 0 5px;
+}
